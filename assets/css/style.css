@@ -1,0 +1,199 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS Variables */
+:root {
+    --background-color: #040404;
+    --accent-color-primary: #551c7a;
+    --accent-color-secondary: #db66D9;
+    --accent-color-highlight: #9d3d9d;
+    --accent-gradient: linear-gradient(90deg, var(--accent-color-secondary), var(--accent-color-primary));
+    --text-color-light: #ffffff; /* For light text on dark background */
+    --text-color-dark: #333333; /* For dark text on light background */
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color-light);
+}
+
+footer p {
+    letter-spacing: 2px;
+}
+
+main {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+button,
+span {
+    font-family: "Montserrat", sans-serif;
+}
+
+p {
+    letter-spacing: 2px;
+}
+
+h1,
+h2,
+h3 {
+    letter-spacing: 10px;
+} 
+
+a {
+    color: var(--text-color-light);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-color-highlight);
+}
+
+.info-title {
+    position: relative;
+    display: inline-block;
+}
+
+.info-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-gradient);
+}
+
+/* Navbar styles */
+
+.nav-link{
+    color: var(--text-color-light);
+}
+
+.nav-link:hover{
+    color: var(--accent-color-highlight) !important;
+}
+
+.nav-link.active {
+    color: var(--accent-color-secondary) !important;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.navbar {
+    z-index: 99;
+    box-shadow: 0 1px 2px var(--accent-color-primary);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-width: 100%;
+    box-shadow: 0 2px 5px var(--accent-color-primary);
+    background: url('/media/images/sc-equipment-main3.webp') no-repeat center/cover;
+    animation: zoomBackground 60s infinite;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 32, 32, 0.6); /* Grey with 50% opacity */
+    z-index: 1;
+}
+
+.hero-section > * {
+    position: relative; /* Ensure content appears above the overlay */
+    z-index: 2;
+}
+
+.cta-button {
+    color: var(--text-color-light);
+    border: 2px solid var(--accent-color-secondary);
+}
+
+.cta-button:hover {
+    color: var(--text-color-light);
+    border: 2px solid var(--accent-color-highlight);
+}
+
+@media screen and (min-width:700px){
+    .cta-button {
+        font-size: 2rem;
+    }
+}
+
+/* Zoom Animation */
+@keyframes zoomBackground {
+    0% {
+        background-size: 100%; /* Initial size */
+    }
+    50% {
+        background-size: 130%; /* Slightly zoomed in */
+    }
+    100% {
+        background-size: 100%; /* Back to original size */
+    }
+}
+
+/* Small Screen sizes */
+@media screen and (max-width:700px){
+
+    .hero-section {
+        min-height: 40vh;
+    }
+
+    h1, h2 {
+        font-size: 1rem;
+        letter-spacing: 5px;
+    }
+
+    p {
+        font-size: 0.7rem;
+    }
+
+    /* Zoom Animation */
+    @keyframes zoomBackground {
+        0% {
+            background-size: 110%; /* Initial size */
+        }
+        50% {
+            background-size: 140%; /* Slightly zoomed in */
+        }
+        100% {
+            background-size: 110%; /* Back to original size */
+        }
+    }
+}
+
+
+/* Carousel Styles */
+.carousel img {
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100vh; /* Prevent it from taking up more than the full viewport height */
+}
+
+/* For tablet screens and larger: Reduce height */
+@media (min-width: 768px) {
+    .carousel img {
+        max-height: 50vh; /* Adjust the height to suit the page layout */
+        object-fit: cover; /* Ensure the image scales nicely */
+    }
+}
