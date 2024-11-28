@@ -104,7 +104,7 @@ a:hover {
     position: relative;
     min-width: 100%;
     box-shadow: 0 2px 5px var(--accent-color-primary);
-    background: url('media/images/sc-equipment-main3.webp') no-repeat center/cover;
+    background: url('../../media/images/sc-equipment-main3.webp') no-repeat center/cover;
     animation: zoomBackground 60s infinite;
 }
 
