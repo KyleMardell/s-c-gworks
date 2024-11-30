@@ -37,12 +37,13 @@ h6,
 p,
 a,
 li,
+ul,
 button,
 span {
     font-family: "Montserrat", sans-serif;
 }
 
-p {
+p, li {
     letter-spacing: 2px;
 }
 
@@ -165,8 +166,8 @@ a:hover {
         letter-spacing: 5px;
     }
 
-    p {
-        font-size: 0.7rem;
+    p, li {
+        font-size: 0.8rem;
     }
 
     /* Zoom Animation */
